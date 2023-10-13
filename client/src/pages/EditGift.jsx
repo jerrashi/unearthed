@@ -40,13 +40,31 @@ const EditGift = () => {
     const updateGift = (event) => {
         event.preventDefault()
 
-        
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(gift)
+        }
+
+        fetch(`http://localhost:3001/gifts/${id}`, options)
+        window.location = '/'
     }
 
     const deleteGift = (event) => {
         event.preventDefault()
 
-        
+        const options = {
+            method: 'DELETE',
+            hearders: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(gift)
+        }
+
+        fetch(`http://localhost:3001/gifts/${id}`, options)
+        window.location = '/'
     }
 
     return (
